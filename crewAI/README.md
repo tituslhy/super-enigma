@@ -1,6 +1,6 @@
-# PrepForMeeting Crew
+# CrewReportGenerationAutomation Crew
 
-Welcome to the PrepForMeeting Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Welcome to the CrewReportGenerationAutomation Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
 
 ## Installation
 
@@ -14,21 +14,18 @@ pip install uv
 
 Next, navigate to your project directory and install the dependencies:
 
-1. First lock the dependencies and then install them:
+(Optional) Lock the dependencies and install them by using the CLI command:
 ```bash
-uv lock
-```
-```bash
-uv sync
+crewai install
 ```
 ### Customizing
 
 **Add your `OPENAI_API_KEY` into the `.env` file**
 
-- Modify `src/prep_for_meeting/config/agents.yaml` to define your agents
-- Modify `src/prep_for_meeting/config/tasks.yaml` to define your tasks
-- Modify `src/prep_for_meeting/crew.py` to add your own logic, tools and specific args
-- Modify `src/prep_for_meeting/main.py` to add custom inputs for your agents and tasks
+- Modify `src/crew_report_generation_automation/config/agents.yaml` to define your agents
+- Modify `src/crew_report_generation_automation/config/tasks.yaml` to define your tasks
+- Modify `src/crew_report_generation_automation/crew.py` to add your own logic, tools and specific args
+- Modify `src/crew_report_generation_automation/main.py` to add custom inputs for your agents and tasks
 
 ## Running the Project
 
@@ -37,22 +34,18 @@ To kickstart your crew of AI agents and begin task execution, run this from the 
 ```bash
 $ crewai run
 ```
-or
-```bash
-uv run prep_for_meeting
-```
 
-This command initializes the prep-for-meeting Crew, assembling the agents and assigning them tasks as defined in your configuration.
+This command initializes the crew_report_generation_automation Crew, assembling the agents and assigning them tasks as defined in your configuration.
 
 This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
 
 ## Understanding Your Crew
 
-The prep-for-meeting Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+The crew_report_generation_automation Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
 
 ## Support
 
-For support, questions, or feedback regarding the PrepForMeeting Crew or crewAI.
+For support, questions, or feedback regarding the CrewReportGenerationAutomation Crew or crewAI.
 - Visit our [documentation](https://docs.crewai.com)
 - Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
 - [Join our Discord](https://discord.com/invite/X4JWnZnxPb)

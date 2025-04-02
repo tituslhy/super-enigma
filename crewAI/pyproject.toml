@@ -1,24 +1,20 @@
 [project]
-name = "prep_for_meeting"
+name = "crew_report_generation_automation"
 version = "0.1.0"
-description = "prep-for-meeting using crewAI"
-authors = [
-    { name = "Your Name", email = "you@example.com" },
-]
+description = "crew_report_generation_automation using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.10,<=3.13"
 dependencies = [
-    "crewai[tools]>=0.76.2",
+    "crewai[tools]>=0.86.0,<1.0.0"
 ]
 
 [project.scripts]
-prep_for_meeting = "prep_for_meeting.main:run"
-run_crew = "prep_for_meeting.main:run"
-train = "prep_for_meeting.main:train"
-replay = "prep_for_meeting.main:replay"
-test = "prep_for_meeting.main:test"
+crew_report_generation_automation = "crew_report_generation_automation.main:run"
+run_crew = "crew_report_generation_automation.main:run"
+train = "crew_report_generation_automation.main:train"
+replay = "crew_report_generation_automation.main:replay"
+test = "crew_report_generation_automation.main:test"
 
 [build-system]
-requires = [
-    "hatchling",
-]
+requires = ["hatchling"]
 build-backend = "hatchling.build"

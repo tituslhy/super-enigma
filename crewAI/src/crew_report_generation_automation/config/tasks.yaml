@@ -1,0 +1,39 @@
+---
+web_search_task:
+  description: Using the WebsiteSearchTool, the internet_forager will search the internet
+    for websites related to the provided topic {topic}. Compile a top {num_sources}
+    list of URLs based on relevance and recency, factoring in any provided {relevant_keywords}.
+  expected_output: A list of URLs relevant to {topic}.
+  async_execution: false
+  agent: internet_forager
+content_extraction_task:
+  description: For each URL identified in web_search_task, the content_extractor will
+    extract the main textual content focusing on sections most relevant to {topic}
+    using the ScrapeWebsiteTool.
+  expected_output: A combined document of extracted text from all relevant URLs related
+    to {topic}.
+  async_execution: false
+  agent: content_extractor
+  context:
+  - web_search_task
+content_summarization_task:
+  description: Analyze the extracted content from content_extraction_task and produce
+    a concise summary highlighting the essential details and key points about {topic}.
+  expected_output: A brief and clear summary capturing the main ideas and foundational
+    insights of {topic}.
+  async_execution: false
+  agent: content_summarizer
+  context:
+  - content_extraction_task
+report_compilation_task:
+  description: Combine the summarized content from content_summarization_task and
+    the list of source URLs from web_search_task to compile a succinct article. The
+    article should include a brief overview of {topic} and a section listing all source
+    URLs for follow-up reading.
+  expected_output: A complete, well-structured article that provides an overview of
+    {topic} and includes a list of source URLs for further information.
+  async_execution: false
+  agent: report_compiler
+  context:
+  - content_summarization_task
+  - web_search_task
